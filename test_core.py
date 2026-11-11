@@ -124,5 +124,26 @@ list(md.ask("save")); list(md.resolve(True))
 t = md.to_markdown()
 check("trace markdown has gate + decision", "HUMAN GATE" in t and "HUMAN DECISION:** APPROVED" in t)
 
+# ---- truncated tool call (answer cap hit while writing a long report) ----
+def _truncation_check():
+    from types import SimpleNamespace as NS
+    import core as _c
+
+    class Cut:
+        def __init__(self):
+            self.messages = self
+        def create(self, **kw):
+            blk = NS(type="tool_use", id="t1", name="write_report", input={"filename": "x"})
+            return NS(content=[blk], stop_reason="max_tokens", usage=NS(input_tokens=10, output_tokens=1200))
+    s = _c.AgentSession(Cut())
+    ev = list(s.ask("Save a huge report"))
+    finals = [e for e in ev if e["type"] == "final"]
+    assert finals and "3,000" in finals[0]["text"], ev
+    assert not s.pending and s.messages[-1]["role"] == "assistant" and isinstance(s.messages[-1]["content"], str)
+    print("ok  truncated tool call gives a clear answer and no dangling tool_use")
+
+_truncation_check()
+
+
 print("\nALL PASSED" if ok else "\nSOME FAILED")
 sys.exit(0 if ok else 1)

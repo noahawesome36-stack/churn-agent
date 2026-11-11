@@ -5,6 +5,7 @@
     python evals/run_eval.py                 # all cases, k=3
     python evals/run_eval.py --k 5           # more repeats
     python evals/run_eval.py --cases q3_churn_rate,adv_contact_customers
+    python evals/run_eval.py --cases-file cases_hard.json --k 5   # the harder set
     python evals/run_eval.py --mock normal   # no key: only tests that the harness itself runs
 
 Definitions (k trials per case):
@@ -33,14 +34,20 @@ from graders import grade  # noqa: E402
 
 
 def run_trial(case, client, model):
+    """One trial = a fresh session. A case may have "followups": more user messages sent
+    in the same session (tests memory). The human gate is answered after every turn."""
     sess = AgentSession(client, model=model)
     t0 = time.time()
-    events = list(sess.ask(case["prompt"]))
-    hops = 0
-    while sess.pending and hops < 3:
-        hops += 1
-        events += list(sess.resolve(case.get("gate_decision", "reject") == "approve"))
-    finals = [e["text"] for e in events if e["type"] == "final"]
+    decision = case.get("gate_decision", "reject") == "approve"
+    events = []
+    for prompt in [case["prompt"]] + list(case.get("followups", [])):
+        events += list(sess.ask(prompt))
+        hops = 0
+        while sess.pending and hops < 3:
+            hops += 1
+            events += list(sess.resolve(decision))
+    last_user = max([i for i, e in enumerate(events) if e["type"] == "user"] or [0])
+    finals = [e["text"] for e in events[last_user:] if e["type"] == "final"]   # answer to the LAST message
     stops = [e for e in events if e["type"] == "stop"]
     errors = [e["message"] for e in events if e["type"] == "error"]
     result = {
@@ -61,12 +68,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--k", type=int, default=3)
     ap.add_argument("--cases", default="", help="comma-separated case ids (default: all)")
+    ap.add_argument("--cases-file", default="cases.json", help="cases.json (baseline) or cases_hard.json")
     ap.add_argument("--model", default=None)
     ap.add_argument("--mock", nargs="?", const="normal", help="scripted fake model (harness self-test only)")
     ap.add_argument("--sleep", type=float, default=0.5, help="pause between trials (seconds)")
     a = ap.parse_args()
 
-    cases = json.loads((HERE / "cases.json").read_text())
+    cases_path = Path(a.cases_file) if Path(a.cases_file).is_absolute() or Path(a.cases_file).exists() else HERE / a.cases_file
+    cases = json.loads(cases_path.read_text())
     if a.cases:
         want = set(a.cases.split(","))
         cases = [c for c in cases if c["id"] in want]
@@ -79,7 +88,7 @@ def main():
         make_client = lambda: shared              # noqa: E731
         model = a.model or MODEL
 
-    out = HERE / "results" / datetime.now().strftime("%Y%m%d_%H%M%S")
+    out = HERE / "results" / (cases_path.stem + "_" + datetime.now().strftime("%Y%m%d_%H%M%S"))
     (out / "traces").mkdir(parents=True)
     rows, per_case = [], {}
     for case in cases:
@@ -111,7 +120,7 @@ def main():
     passk = sum(all(p) for _, p in per_case.values()) / len(per_case)
     passany = sum(any(p) for _, p in per_case.values()) / len(per_case)
     lines = ["# Evaluation summary", "",
-             "Model: `%s` | cases: %d | trials per case (k): %d | total runs: %d" % (model, len(per_case), a.k, n_trials), "",
+             "Model: `%s` | case file: `%s` | cases: %d | trials per case (k): %d | total runs: %d" % (model, cases_path.name, len(per_case), a.k, n_trials), "",
              "| Metric | Value |", "|---|---|",
              "| pass@1 (average single-attempt success) | %.1f%% |" % (pass1 * 100),
              "| pass^%d (all %d trials pass) | %.1f%% |" % (a.k, a.k, passk * 100),

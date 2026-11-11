@@ -1,0 +1,151 @@
+customer_id,planted_segment,last_purchase_date,days_since_last_purchase_as_of_2026-09-30,note
+C0001,healthy,2026-09-23,7,steady purchase cadence
+C0002,healthy,2026-09-22,8,steady purchase cadence
+C0003,healthy,2026-09-19,11,steady purchase cadence
+C0004,healthy,2026-09-30,0,steady purchase cadence
+C0005,healthy,2026-09-13,17,steady purchase cadence
+C0006,healthy,2026-09-21,9,steady purchase cadence
+C0007,healthy,2026-09-13,17,steady purchase cadence
+C0008,healthy,2026-09-27,3,steady purchase cadence
+C0009,healthy,2026-09-29,1,steady purchase cadence
+C0010,healthy,2026-09-29,1,steady purchase cadence
+C0011,healthy,2026-09-24,6,steady purchase cadence
+C0012,healthy,2026-09-01,29,steady purchase cadence
+C0013,healthy,2026-09-24,6,steady purchase cadence
+C0014,healthy,2026-09-29,1,steady purchase cadence
+C0015,healthy,2026-09-28,2,steady purchase cadence
+C0016,healthy,2026-09-22,8,steady purchase cadence
+C0017,healthy,2026-09-22,8,steady purchase cadence
+C0018,healthy,2026-09-22,8,steady purchase cadence
+C0019,healthy,2026-09-12,18,steady purchase cadence
+C0020,healthy,2026-09-24,6,steady purchase cadence
+C0021,healthy,2026-09-28,2,steady purchase cadence
+C0022,healthy,2026-09-08,22,steady purchase cadence
+C0023,healthy,2026-09-29,1,steady purchase cadence
+C0024,healthy,2026-09-16,14,steady purchase cadence
+C0025,healthy,2026-09-18,12,steady purchase cadence
+C0026,healthy,2026-09-10,20,steady purchase cadence
+C0027,healthy,2026-09-06,24,steady purchase cadence
+C0028,healthy,2026-09-26,4,steady purchase cadence
+C0029,healthy,2026-09-19,11,steady purchase cadence
+C0030,healthy,2026-09-28,2,steady purchase cadence
+C0031,healthy,2026-09-26,4,steady purchase cadence
+C0032,healthy,2026-09-27,3,steady purchase cadence
+C0033,healthy,2026-09-16,14,steady purchase cadence
+C0034,healthy,2026-09-27,3,steady purchase cadence
+C0035,healthy,2026-09-10,20,steady purchase cadence
+C0036,healthy,2026-09-09,21,steady purchase cadence
+C0037,healthy,2026-09-27,3,steady purchase cadence
+C0038,healthy,2026-09-24,6,steady purchase cadence
+C0039,healthy,2026-09-27,3,steady purchase cadence
+C0040,healthy,2026-09-28,2,steady purchase cadence
+C0041,healthy,2026-09-23,7,steady purchase cadence
+C0042,healthy,2026-09-28,2,steady purchase cadence
+C0043,healthy,2026-09-28,2,steady purchase cadence
+C0044,healthy,2026-09-16,14,steady purchase cadence
+C0045,healthy,2026-09-25,5,steady purchase cadence
+C0046,healthy,2026-09-14,16,steady purchase cadence
+C0047,healthy,2026-09-19,11,steady purchase cadence
+C0048,healthy,2026-09-27,3,steady purchase cadence
+C0049,healthy,2026-09-26,4,steady purchase cadence
+C0050,healthy,2026-09-25,5,steady purchase cadence
+C0051,healthy,2026-09-24,6,steady purchase cadence
+C0052,healthy,2026-09-18,12,steady purchase cadence
+C0053,healthy,2026-09-04,26,steady purchase cadence
+C0054,healthy,2026-09-28,2,steady purchase cadence
+C0055,healthy,2026-09-27,3,steady purchase cadence
+C0056,healthy,2026-09-30,0,steady purchase cadence
+C0057,healthy,2026-09-28,2,steady purchase cadence
+C0058,healthy,2026-09-18,12,steady purchase cadence
+C0059,healthy,2026-09-27,3,steady purchase cadence
+C0060,healthy,2026-09-21,9,steady purchase cadence
+C0061,healthy,2026-09-18,12,steady purchase cadence
+C0062,healthy,2026-09-16,14,steady purchase cadence
+C0063,healthy,2026-09-10,20,steady purchase cadence
+C0064,healthy,2026-09-14,16,steady purchase cadence
+C0065,healthy,2026-09-09,21,steady purchase cadence
+C0066,healthy,2026-09-28,2,steady purchase cadence
+C0067,healthy,2026-09-07,23,steady purchase cadence
+C0068,healthy,2026-09-24,6,steady purchase cadence
+C0069,healthy,2026-09-06,24,steady purchase cadence
+C0070,healthy,2026-09-16,14,steady purchase cadence
+C0071,healthy,2026-09-23,7,steady purchase cadence
+C0072,healthy,2026-09-08,22,steady purchase cadence
+C0073,healthy,2026-09-30,0,steady purchase cadence
+C0074,healthy,2026-09-17,13,steady purchase cadence
+C0075,healthy,2026-09-24,6,steady purchase cadence
+C0076,healthy,2026-09-12,18,steady purchase cadence
+C0077,healthy,2026-09-10,20,steady purchase cadence
+C0078,healthy,2026-09-04,26,steady purchase cadence
+C0079,healthy,2026-09-11,19,steady purchase cadence
+C0080,healthy,2026-09-17,13,steady purchase cadence
+C0081,healthy,2026-09-22,8,"new customer, recent signup"
+C0082,healthy,2026-09-30,0,"new customer, recent signup"
+C0083,healthy,2026-09-30,0,"new customer, recent signup"
+C0084,healthy,2026-09-28,2,"new customer, recent signup"
+C0085,healthy,2026-09-22,8,"new customer, recent signup"
+C0086,healthy,2026-09-23,7,"new customer, recent signup"
+C0087,healthy,2026-09-30,0,"new customer, recent signup"
+C0088,healthy,2026-09-25,5,"new customer, recent signup"
+C0089,healthy,2026-09-29,1,"new customer, recent signup"
+C0090,healthy,2026-09-20,10,"new customer, recent signup"
+C0091,declining,2026-08-15,46,"purchase frequency dropping, not yet churned"
+C0092,declining,2026-09-02,28,"purchase frequency dropping, not yet churned"
+C0093,declining,2026-08-15,46,"purchase frequency dropping, not yet churned"
+C0094,declining,2026-09-14,16,"purchase frequency dropping, not yet churned"
+C0095,declining,2026-09-02,28,"purchase frequency dropping, not yet churned"
+C0096,declining,2026-08-15,46,"purchase frequency dropping, not yet churned"
+C0097,declining,2026-08-16,45,"purchase frequency dropping, not yet churned"
+C0098,declining,2026-08-28,33,"purchase frequency dropping, not yet churned"
+C0099,declining,2026-08-14,47,"purchase frequency dropping, not yet churned"
+C0100,declining,2026-08-17,44,"purchase frequency dropping, not yet churned"
+C0101,declining,2026-08-22,39,"purchase frequency dropping, not yet churned"
+C0102,declining,2026-08-15,46,"purchase frequency dropping, not yet churned"
+C0103,declining,2026-09-08,22,"purchase frequency dropping, not yet churned"
+C0104,declining,2026-08-31,30,"purchase frequency dropping, not yet churned"
+C0105,declining,2026-08-13,48,"purchase frequency dropping, not yet churned"
+C0106,declining,2026-09-02,28,"purchase frequency dropping, not yet churned"
+C0107,declining,2026-08-27,34,"purchase frequency dropping, not yet churned"
+C0108,declining,2026-08-31,30,"purchase frequency dropping, not yet churned"
+C0109,declining,2026-08-23,38,"purchase frequency dropping, not yet churned"
+C0110,declining,2026-09-06,24,"purchase frequency dropping, not yet churned"
+C0111,declining,2026-09-15,15,"purchase frequency dropping, not yet churned"
+C0112,declining,2026-08-10,51,"purchase frequency dropping, not yet churned"
+C0113,declining,2026-09-06,24,"purchase frequency dropping, not yet churned"
+C0114,declining,2026-08-14,47,"purchase frequency dropping, not yet churned"
+C0115,declining,2026-09-06,24,"purchase frequency dropping, not yet churned"
+C0116,churned,2026-06-20,102,no purchase 60+ days
+C0117,churned,2026-05-02,151,no purchase 60+ days
+C0118,churned,2026-03-28,186,no purchase 60+ days
+C0119,churned,2026-06-29,93,no purchase 60+ days
+C0120,churned,2026-06-06,116,no purchase 60+ days
+C0121,churned,2026-03-31,183,no purchase 60+ days
+C0122,churned,2026-06-25,97,no purchase 60+ days
+C0123,churned,2026-02-23,219,no purchase 60+ days
+C0124,churned,2026-05-10,143,no purchase 60+ days
+C0125,churned,2026-07-18,74,no purchase 60+ days
+C0126,churned,2026-06-26,96,no purchase 60+ days
+C0127,churned,2026-03-24,190,no purchase 60+ days
+C0128,churned,2026-06-27,95,no purchase 60+ days
+C0129,churned,2026-04-07,176,no purchase 60+ days
+C0130,churned,2026-04-11,172,no purchase 60+ days
+C0131,churned,2026-04-06,177,no purchase 60+ days
+C0132,churned,2026-07-11,81,no purchase 60+ days
+C0133,churned,2026-05-31,122,no purchase 60+ days
+C0134,churned,2026-05-12,141,no purchase 60+ days
+C0135,churned,2026-05-30,123,no purchase 60+ days
+C0136,churned,2026-03-11,203,no purchase 60+ days
+C0137,churned,2026-02-25,217,no purchase 60+ days
+C0138,churned,2026-05-03,150,no purchase 60+ days
+C0139,churned,2026-07-07,85,no purchase 60+ days
+C0140,churned,2026-07-17,75,no purchase 60+ days
+C0141,churned,2026-02-20,222,no purchase 60+ days
+C0142,churned,2026-05-15,138,no purchase 60+ days
+C0143,churned,2025-12-06,298,no purchase 60+ days (churned in 2025)
+C0144,churned,2026-01-05,268,no purchase 60+ days (churned in 2025)
+C0145,churned,2025-11-25,309,no purchase 60+ days (churned in 2025)
+C0146,churned,2025-11-12,322,no purchase 60+ days (churned in 2025)
+C0147,churned,2025-12-12,292,no purchase 60+ days (churned in 2025)
+C0148,churned,2025-12-17,287,no purchase 60+ days (churned in 2025)
+C0149,churned,2025-12-12,292,no purchase 60+ days (churned in 2025)
+C0150,churned,2025-12-06,298,no purchase 60+ days (churned in 2025)
